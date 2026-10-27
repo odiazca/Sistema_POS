@@ -1,0 +1,80 @@
+==============================================================
+ SysTienda - Sistema de Punto de Venta  (v1.7.2)
+ CREDENCIALES DEL SISTEMA
+==============================================================
+ DOCUMENTO CONFIDENCIAL: no lo compartas ni lo subas a lugares
+ publicos. Guardalo solo en tu equipo.
+
+--------------------------------------------------------------
+ 1. ACCESO AL SISTEMA (instalacion local con Laragon)
+--------------------------------------------------------------
+ URL principal : http://sys_tienda.test/
+ URL alterna   : http://localhost/sys_tienda/
+ Instalador    : http://sys_tienda.test/install.php   (solo la primera vez)
+
+ Usuarios iniciales creados por el instalador:
+
+   Rol             Usuario    Contrasena inicial   Sucursal
+   --------------  ---------  -------------------  ----------------
+   Administrador   admin      admin123             Todas
+   Cajero          cajero     cajero123            Sucursal Central
+   Cajero          luis       cajero123            Sucursal Norte
+
+ IMPORTANTE:
+  - En el primer ingreso el sistema OBLIGA a cambiar la contrasena
+    (minimo 8 caracteres, con letras y numeros).
+  - Si ya cambiaste alguna contrasena, esa clave nueva NO esta
+    registrada aqui: es la que tu definiste.
+  - Si la olvidas: ingresa como administrador y restablecela desde
+    el modulo Usuarios.
+
+--------------------------------------------------------------
+ 2. BASE DE DATOS (Laragon - instalacion local)
+--------------------------------------------------------------
+ Servidor      : localhost
+ Puerto        : 3306
+ Usuario       : root
+ Contrasena    : (vacia)
+ Base de datos : sys_tienda
+ phpMyAdmin    : http://localhost/phpmyadmin  (o desde Laragon > Base de datos)
+
+--------------------------------------------------------------
+ 3. HOSTING (completar al publicar en Hostinger u otro)
+--------------------------------------------------------------
+ Dominio / URL del sistema : https://______________________
+ Panel hPanel (correo)     : ______________________________
+ Panel hPanel (contrasena) : ______________________________
+
+ Base de datos MySQL del hosting (archivo config/local.php):
+   DB_HOST : localhost
+   DB_NAME : u_________________  (con el prefijo que asigna el hosting)
+   DB_USER : u_________________
+   DB_PASS : ______________________________
+   DB_PORT : 3306
+
+ Usuario administrador en produccion : ______________________
+ Contrasena administrador (fuerte)   : ______________________
+
+ FTP (opcional)
+   Servidor : ______________________   Usuario : ______________
+   Contrasena : ____________________   Puerto : 21
+
+--------------------------------------------------------------
+ 4. ASISTENTE IA / CHAT IA (Google Gemini - gratuito)
+--------------------------------------------------------------
+ Obtener clave : https://aistudio.google.com/apikey
+ Donde pegarla : Menu > Asistente IA > Activar (o Configurar IA)
+ La clave se guarda CIFRADA dentro del sistema y NO se incluye en
+ este archivo. En un servidor nuevo debes volver a ingresarla.
+ Consejo: si alguna vez compartiste tu clave en un chat o captura,
+ eliminala en AI Studio y genera una nueva.
+
+--------------------------------------------------------------
+ 5. RECOMENDACIONES DE SEGURIDAD
+--------------------------------------------------------------
+  - Cambia todas las contrasenas iniciales antes de usar el sistema.
+  - Crea un usuario distinto por cada cajero.
+  - En produccion usa HTTPS, APP_ENV = produccion y elimina install.php.
+  - No uses 'root' como usuario de base de datos en internet.
+  - Descarga copias de seguridad periodicas fuera del servidor.
+==============================================================

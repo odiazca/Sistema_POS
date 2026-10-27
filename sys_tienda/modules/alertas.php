@@ -1,0 +1,7 @@
+<?php $extraJs[] = BASE_URL . '/assets/js/alertas.js?v=' . ASSET_V; $bajo = $slug === 'stock-bajo'; ?>
+<div class="page-head"><div><h1><?= $bajo ? 'Stock bajo' : 'Productos por vencer' ?></h1><p><?= $bajo ? 'Productos en o por debajo de su stock mínimo: es momento de reponer' : 'Controla la mercadería próxima a vencer para rotarla o aplicar ofertas' ?></p></div>
+  <div class="d-flex gap-2"><?php if (!$bajo): ?><select class="form-select" id="dias"><?php $vd = (int)cfg('vencimiento_dias', '30'); $ds = array_unique([15, 30, 60, 90, $vd]); sort($ds); foreach ($ds as $d0): ?><option value="<?= $d0 ?>"<?= $d0 === $vd ? ' selected' : '' ?>>Próx. <?= $d0 ?> días</option><?php endforeach; ?></select><?php endif; ?><button class="btn-soft" id="btnCsv"><i class="bi bi-download"></i> CSV</button></div></div>
+<div class="row g-3 mb-3" id="stats"></div>
+<div class="cardx"><div class="table-responsive"><table class="tbl"><thead><?php if ($bajo): ?><tr><th>Producto</th><th>Categoría</th><th class="r">Stock</th><th class="r">Mínimo</th><th class="r">Reponer (sugerido)</th><th class="r">Costo est.</th><th></th></tr>
+  <?php else: ?><tr><th>Producto</th><th>Categoría</th><th>Vence</th><th>Situación</th><th class="r">Stock</th><th class="r">Valor en riesgo</th></tr><?php endif; ?></thead><tbody id="tb"></tbody></table></div></div>
+<script>window.ALERTA = '<?= $bajo ? 'bajo' : 'vence' ?>';</script>

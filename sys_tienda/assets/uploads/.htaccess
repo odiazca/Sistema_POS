@@ -1,0 +1,6 @@
+# Solo imágenes: no ejecutar scripts en esta carpeta
+php_flag engine off
+RemoveHandler .php .phtml .php3 .php5
+<FilesMatch "\.(php|phtml|php\d?|phar)$">
+  Require all denied
+</FilesMatch>

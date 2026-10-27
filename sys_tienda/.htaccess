@@ -1,0 +1,8 @@
+# SysTienda · endurecimiento (Apache / Laragon)
+Options -Indexes
+<FilesMatch "\.(sql|sql\.gz|lock|log|bak|md|ini|dist)$">
+    Require all denied
+</FilesMatch>
+<FilesMatch "^(local\.php|local\.example\.php)$">
+    Require all denied
+</FilesMatch>
